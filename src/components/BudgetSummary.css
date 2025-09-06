@@ -1,0 +1,430 @@
+.budget-summary {
+  margin-bottom: 24px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1200px) {
+  .summary-cards {
+    gap: 24px;
+    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.summary-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s;
+}
+
+@media (min-width: 1200px) {
+  .summary-card {
+    padding: 28px 32px;
+    gap: 20px;
+    border-radius: 12px;
+  }
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.summary-card.income .card-icon {
+  background: #28a745;
+}
+
+.summary-card.expenses .card-icon {
+  background: #dc3545;
+}
+
+.summary-card.balance.positive .card-icon {
+  background: #17a2b8;
+}
+
+.summary-card.balance.negative .card-icon {
+  background: #fd7e14;
+}
+
+.summary-card.budget .card-icon {
+  background: #6f42c1;
+}
+
+.card-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-content .amount {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.summary-card.balance.negative .amount {
+  color: #dc3545;
+}
+
+.budget-progress {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-header h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  position: relative !important;
+  z-index: 999 !important;
+}
+
+.progress-percentage {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.edit-budget-btn-header {
+  background: #ff6b35 !important;
+  border: 3px solid #ff6b35 !important;
+  color: #ffffff !important;
+  padding: 12px 20px !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.5) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  z-index: 1000 !important;
+  position: relative !important;
+  min-width: 160px !important;
+  height: 44px !important;
+  animation: pulse-button 2s infinite !important;
+}
+
+.edit-budget-btn-header:hover {
+  background: #e55a2b !important;
+  border-color: #e55a2b !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.7) !important;
+  animation: none !important;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(255, 68, 68, 0.9);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 6px 20px rgba(255, 68, 68, 0.6);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-button {
+  0% {
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(255, 107, 53, 0.8);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.5);
+    transform: scale(1);
+  }
+}
+
+.progress-percentage {
+  font-size: 18px;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.progress-bar {
+  height: 12px;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+.progress-fill.normal {
+  background: #28a745;
+}
+
+.progress-fill.warning {
+  background: #ffc107;
+}
+
+.progress-fill.over-budget {
+  background: #dc3545;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-primary);
+  min-height: 24px;
+  width: 100%;
+}
+
+.budget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.edit-budget-btn {
+  background: #3b82f6 !important;
+  border: 2px solid #3b82f6 !important;
+  color: #fff !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+.edit-budget-btn:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+}
+
+.edit-budget-btn::before {
+  content: "Modifier" !important;
+  font-size: 12px !important;
+}
+
+.edit-budget-btn-inline {
+  background: #f59e0b !important;
+  border: 2px solid #f59e0b !important;
+  color: #fff !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin-left: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3) !important;
+}
+
+.edit-budget-btn-inline:hover {
+  background: #d97706 !important;
+  border-color: #d97706 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.4) !important;
+}
+
+.edit-budget-btn-inline::before {
+  content: "✏️" !important;
+  margin-right: 2px !important;
+}
+
+.budget-display {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  color: #000 !important;
+  font-size: 14px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.budget-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.budget-input {
+  background: var(--input-bg);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: var(--input-text);
+  font-size: 14px;
+  width: 100px;
+  text-align: right;
+}
+
+.budget-input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  background: var(--input-bg-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.save-btn, .cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-btn:hover {
+  background: rgba(34, 197, 94, 0.3);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.cancel-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.budget-amount-container {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.budget-amount-container span {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 14px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.edit-budget-btn-inline {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 4px;
+  padding: 4px 6px !important;
+  color: white !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1 !important;
+  visibility: visible !important;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.edit-budget-btn-inline:hover {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.over-budget-text {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .progress-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

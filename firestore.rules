@@ -1,0 +1,174 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Règles pour la collection transactions
+    match /transactions/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection calendar
+    match /calendar/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection eventCategories
+    match /eventCategories/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection marketingCosts
+    match /marketingCosts/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection budgetSettings
+    match /budgetSettings/{userId} {
+      allow read, write, create, delete: if request.auth != null && 
+        request.auth.uid == userId;
+    }
+    
+    // Règles pour la collection budgetHistory
+    match /budgetHistory/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection budgetCategories
+    match /budgetCategories/{userId} {
+      allow read, write, create, delete: if request.auth != null && 
+        request.auth.uid == userId;
+    }
+    
+    // Règles pour la collection media
+    match /media/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection users (profils)
+    match /users/{userId} {
+      allow read, write, create, delete: if request.auth != null && 
+        request.auth.uid == userId;
+    }
+    
+    // Règles pour la collection socialPosts
+    match /socialPosts/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection socialAccounts
+    match /socialAccounts/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection projects (projets immobiliers)
+    match /projects/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection units (unités immobilières)
+    match /units/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection gestionMessages (messages internes)
+    match /gestionMessages/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection gestionTasks (tâches de gestion)
+    match /gestionTasks/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection agendaTasks (tâches agenda spécifiques)
+    match /agendaTasks/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection contractors (prestataires)
+    match /contractors/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection documents (documents immobiliers)
+    match /documents/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection gestionAgenda (agenda de gestion)
+    match /gestionAgenda/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection gestionDashboard (tableau de bord)
+    match /gestionDashboard/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection gestionNotifications (notifications)
+    match /gestionNotifications/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+    
+    // Règles pour la collection campaigns (campagnes marketing)
+    match /campaigns/{document} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && 
+        request.auth.uid == request.resource.data.userId;
+    }
+  }
+}

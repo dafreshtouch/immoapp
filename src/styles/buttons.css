@@ -1,0 +1,214 @@
+/* Système de boutons adaptatif global */
+
+/* Boutons de base - s'adaptent au contenu */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  min-width: fit-content;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Boutons avec icône seulement - taille fixe carrée */
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0.5rem;
+  min-width: unset;
+}
+
+/* Variantes de couleur */
+.btn-primary {
+  background: #3498db;
+  color: white;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.btn-primary:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-secondary {
+  background: #95a5a6;
+  color: white;
+  box-shadow: 0 2px 4px rgba(149, 165, 166, 0.2);
+}
+
+.btn-secondary:hover {
+  background: #7f8c8d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(149, 165, 166, 0.3);
+}
+
+.btn-success {
+  background: #27ae60;
+  color: white;
+  box-shadow: 0 2px 4px rgba(39, 174, 96, 0.2);
+}
+
+.btn-success:hover {
+  background: #229954;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.btn-warning {
+  background: #f39c12;
+  color: white;
+  box-shadow: 0 2px 4px rgba(243, 156, 18, 0.2);
+}
+
+.btn-warning:hover {
+  background: #e67e22;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+  box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.btn-info {
+  background: #17a2b8;
+  color: white;
+  box-shadow: 0 2px 4px rgba(23, 162, 184, 0.2);
+}
+
+.btn-info:hover {
+  background: #138496;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
+}
+
+.btn-dark {
+  background: #2d3748;
+  color: white;
+  box-shadow: 0 2px 4px rgba(45, 55, 72, 0.2);
+}
+
+.btn-dark:hover {
+  background: #1a202c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(45, 55, 72, 0.3);
+}
+
+/* Boutons outline */
+.btn-outline {
+  background: transparent;
+  border: 2px solid currentColor;
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: currentColor;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-outline-secondary {
+  color: #95a5a6;
+  border-color: #95a5a6;
+}
+
+/* Tailles */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.btn-sm.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0.5rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-lg.btn-icon {
+  width: 48px;
+  height: 48px;
+  padding: 1rem;
+}
+
+/* États */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Groupes de boutons */
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-group .btn {
+  flex: 1;
+}
+
+.btn-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  .btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group .btn {
+    flex: none;
+  }
+}

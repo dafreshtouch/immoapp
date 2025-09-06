@@ -1,0 +1,331 @@
+/* Tour Guide Styles */
+.tour-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+.tour-tooltip {
+  position: fixed;
+  background: var(--card-bg);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xl);
+  z-index: 10000;
+  max-width: 350px;
+  min-width: 280px;
+  animation: tourSlideIn 0.4s ease-out;
+  backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+/* Positionnement des tooltips basé sur data-placement */
+.tour-tooltip[data-placement="top"] {
+  transform: none;
+}
+
+.tour-tooltip[data-placement="bottom"] {
+  transform: none;
+}
+
+.tour-tooltip[data-placement="left"] {
+  transform: none;
+}
+
+.tour-tooltip[data-placement="right"] {
+  transform: none;
+}
+
+/* Contraintes de positionnement pour éviter le débordement */
+
+/* Flèches des tooltips */
+.tour-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+}
+
+.tour-tooltip[data-placement="top"] .tour-arrow {
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: var(--card-bg);
+}
+
+.tour-tooltip[data-placement="bottom"] .tour-arrow {
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: var(--card-bg);
+}
+
+.tour-tooltip[data-placement="left"] .tour-arrow {
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: var(--card-bg);
+}
+
+.tour-tooltip[data-placement="right"] .tour-arrow {
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: var(--card-bg);
+}
+
+/* Contenu du tooltip */
+.tour-content {
+  padding: 0;
+}
+
+.tour-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.tour-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tour-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.tour-close:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.tour-body {
+  padding: 16px 20px;
+}
+
+.tour-description {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.tour-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+  border-radius: 0 0 12px 12px;
+}
+
+.tour-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tour-step-counter {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  min-width: 50px;
+}
+
+.tour-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border-primary);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tour-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.tour-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.tour-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.tour-btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+}
+
+.tour-btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.tour-btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
+}
+
+.tour-btn-secondary:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+}
+
+/* Spotlight pour mettre en évidence l'élément ciblé */
+.tour-spotlight {
+  position: fixed;
+  border: 2px solid rgba(59, 130, 246, 0.9);
+  border-radius: 6px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 9999;
+  animation: tourSpotlight 2s ease-in-out infinite;
+  box-shadow: 
+    0 0 0 2px rgba(59, 130, 246, 0.4),
+    0 0 15px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Highlight de l'élément ciblé */
+.tour-highlight {
+  position: relative;
+  z-index: 9997 !important;
+}
+
+/* Animations */
+@keyframes tourFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tourSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tourSpotlight {
+  0%, 100% {
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 
+      0 0 0 4px rgba(59, 130, 246, 0.3),
+      0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 1);
+    box-shadow: 
+      0 0 0 6px rgba(59, 130, 246, 0.4),
+      0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tour-tooltip {
+    max-width: 280px;
+    min-width: 250px;
+    margin: 20px;
+  }
+  
+  .tour-tooltip-top,
+  .tour-tooltip-bottom {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .tour-tooltip-left,
+  .tour-tooltip-right {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  .tour-actions {
+    flex-direction: column;
+  }
+  
+  .tour-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mode sombre spécifique */
+.dark-theme .tour-overlay {
+  background: transparent;
+}
+
+.dark-theme .tour-spotlight {
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow: 
+    0 0 0 4px rgba(251, 191, 36, 0.3),
+    0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.dark-theme .tour-progress-fill {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+@keyframes tourSpotlightDark {
+  0%, 100% {
+    border-color: rgba(251, 191, 36, 0.8);
+    box-shadow: 
+      0 0 0 4px rgba(251, 191, 36, 0.3),
+      0 0 20px rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    border-color: rgba(251, 191, 36, 1);
+    box-shadow: 
+      0 0 0 6px rgba(251, 191, 36, 0.4),
+      0 0 30px rgba(251, 191, 36, 0.6);
+  }
+}
+
+.dark-theme .tour-spotlight {
+  animation: tourSpotlightDark 2s infinite;
+}

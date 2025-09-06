@@ -1,0 +1,145 @@
+.marketing-breakdown {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.marketing-breakdown h4 {
+  margin: 0 0 16px 0;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.breakdown-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.breakdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breakdown-item-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.item-icon.impressions {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.item-icon.digital {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.item-icon.subscriptions {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.item-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 24px;
+}
+
+.item-label {
+  color: #000 !important;
+  font-weight: 500;
+  font-size: 14px;
+  min-width: 120px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.item-amount {
+  color: #000 !important;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.item-percentage {
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-size: 12px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.item-description {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 0px;
+  margin-top: 4px;
+}
+
+.breakdown-total {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.breakdown-total span {
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .marketing-breakdown {
+    padding: 16px;
+  }
+  
+  .breakdown-item {
+    padding: 10px;
+  }
+  
+  .item-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .item-label,
+  .item-amount {
+    font-size: 13px;
+  }
+  
+  .item-percentage {
+    font-size: 11px;
+  }
+}

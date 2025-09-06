@@ -1,0 +1,135 @@
+/* Variables CSS pour les thèmes */
+:root {
+  /* Thème clair (par défaut) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --bg-modal: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  --bg-modal-header: rgba(255, 255, 255, 0.8);
+  --bg-modal-body: rgba(255, 255, 255, 0.6);
+  --bg-field: rgba(255, 255, 255, 0.8);
+  --bg-input: rgba(255, 255, 255, 0.9);
+  
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --border-focus: #3b82f6;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  
+  --calendar-bg: #ffffff;
+  --calendar-header: #f8f9fa;
+  --calendar-border: #e5e7eb;
+  --calendar-today: #dbeafe;
+  --calendar-hover: #f3f4f6;
+  
+  --event-bg: #007bff;
+  --event-text: #ffffff;
+  --event-shadow: rgba(0, 123, 255, 0.4);
+  
+  /* Variables pour les formulaires et inputs */
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --input-focus: #3b82f6;
+  --input-text: #1f2937;
+  --input-placeholder: #9ca3af;
+  
+  /* Variables pour les boutons */
+  --btn-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --btn-primary-hover: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  --btn-secondary: #f3f4f6;
+  --btn-secondary-hover: #e5e7eb;
+  
+  /* Variables pour les cartes et conteneurs */
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --container-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Thème sombre */
+.dark-theme {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-modal: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  --bg-modal-header: rgba(31, 41, 55, 0.9);
+  --bg-modal-body: rgba(31, 41, 55, 0.7);
+  --bg-field: rgba(55, 65, 81, 0.8);
+  --bg-input: rgba(55, 65, 81, 0.9);
+  
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-light: #6b7280;
+  
+  --border-primary: #374151;
+  --border-secondary: #4b5563;
+  --border-focus: #60a5fa;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  
+  --calendar-bg: #1f2937;
+  --calendar-header: #374151;
+  --calendar-border: #4b5563;
+  --calendar-today: #1e40af;
+  --calendar-hover: #374151;
+  
+  --event-bg: #3b82f6;
+  --event-text: #ffffff;
+  --event-shadow: rgba(59, 130, 246, 0.4);
+  
+  /* Variables pour les formulaires et inputs en mode sombre */
+  --input-bg: rgba(55, 65, 81, 0.8);
+  --input-border: #4b5563;
+  --input-focus: #60a5fa;
+  --input-text: #f9fafb;
+  --input-placeholder: #9ca3af;
+  
+  /* Variables pour les boutons en mode sombre */
+  --btn-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --btn-primary-hover: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  --btn-secondary: #374151;
+  --btn-secondary-hover: #4b5563;
+  
+  /* Variables pour les cartes et conteneurs en mode sombre */
+  --card-bg: rgba(31, 41, 55, 0.8);
+  --container-bg: rgba(17, 24, 39, 0.95);
+}
+
+/* Transition fluide entre les thèmes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styles de base utilisant les variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Scrollbar personnalisée pour le mode sombre */
+.dark-theme ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

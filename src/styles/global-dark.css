@@ -1,0 +1,245 @@
+/* Styles globaux pour le mode sombre - Tous les composants */
+
+/* Formulaires et inputs génériques */
+input, textarea, select {
+  background: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--input-text) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--input-focus) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--input-placeholder) !important;
+}
+
+/* Boutons génériques */
+button:not(.theme-toggle):not(.btn-edit):not(.btn-delete):not(.section-tab):not(.btn-primary):not(.btn-secondary) {
+  background: var(--btn-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+}
+
+button:not(.theme-toggle):not(.btn-edit):not(.btn-delete):not(.section-tab):not(.btn-primary):not(.btn-secondary):hover {
+  background: var(--btn-secondary-hover) !important;
+}
+
+/* Modals génériques */
+.modal, .modal-content {
+  background: var(--bg-modal) !important;
+  color: var(--text-primary) !important;
+}
+
+.modal-header {
+  background: var(--bg-modal-header) !important;
+  border-bottom: 1px solid var(--border-primary) !important;
+}
+
+.modal-body {
+  background: var(--bg-modal-body) !important;
+}
+
+/* Tables */
+table {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+th {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-primary) !important;
+}
+
+td {
+  border-bottom: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+tr:hover {
+  background: var(--bg-secondary) !important;
+}
+
+/* Listes */
+ul, ol {
+  color: var(--text-primary) !important;
+}
+
+li {
+  color: var(--text-primary) !important;
+}
+
+/* Liens */
+a {
+  color: var(--border-focus) !important;
+}
+
+a:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Textes génériques */
+p, span, div, label {
+  color: var(--text-primary) !important;
+}
+
+/* Exception pour les textes dans les boutons de section actifs */
+.section-tab.active p,
+.section-tab.active span,
+.section-tab.active div,
+.section-tab.active label,
+.section-tab.active {
+  color: white !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+/* Conteneurs de contenu */
+.content, .container, .wrapper {
+  background: var(--container-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Barres de défilement pour tous les éléments */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-tertiary) var(--bg-secondary);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Sélection de texte */
+::selection {
+  background: var(--border-focus);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--border-focus);
+  color: white;
+}
+
+/* Éléments de formulaire spécifiques */
+.form-control, .form-input, .input-field {
+  background: var(--input-bg) !important;
+  border: 1px solid var(--input-border) !important;
+  color: var(--input-text) !important;
+}
+
+.form-label, .input-label {
+  color: var(--text-secondary) !important;
+}
+
+/* Dropdowns et sélecteurs */
+.dropdown, .select-dropdown {
+  background: var(--bg-field) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.dropdown-item {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+.dropdown-item:hover {
+  background: var(--bg-secondary) !important;
+}
+
+/* Alertes et notifications */
+.alert, .notification {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Badges et tags */
+.badge, .tag {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Tooltips */
+.tooltip {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+}
+
+/* Panneaux et sections */
+.panel, .section, .widget {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Graphiques et charts (si présents) */
+.chart, .graph {
+  background: var(--bg-primary) !important;
+}
+
+/* Éléments de navigation supplémentaires */
+.breadcrumb {
+  background: var(--bg-secondary) !important;
+}
+
+.breadcrumb-item {
+  color: var(--text-secondary) !important;
+}
+
+.breadcrumb-item.active {
+  color: var(--text-primary) !important;
+}
+
+/* Pagination */
+.pagination {
+  background: var(--bg-secondary) !important;
+}
+
+.page-link {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.page-link:hover {
+  background: var(--bg-secondary) !important;
+}
+
+/* Tabs */
+.tab-content {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.nav-tabs .nav-link {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-secondary) !important;
+}
+
+.nav-tabs .nav-link.active {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
